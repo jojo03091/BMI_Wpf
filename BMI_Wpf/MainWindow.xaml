@@ -1,0 +1,36 @@
+﻿<Window x:Class="BMI_Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BMI_Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="402.892" Width="525">
+    <Grid>
+        <StackPanel Margin="0,41,0.4,-40.6">
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" FontSize="30"><Run Text="  身 高"/></TextBlock>
+                <TextBox Width="300" x:Name="height" Height="27" TextChanged="height_TextChanged"/>
+                <Button Width="78" Margin="20,10,0,10" x:Name="heightclear" Click="heightclear_Click" Content="Clear" Height="32"/>
+            </StackPanel >
+
+            <Slider Minimum="0" Maximum="200" ValueChanged="Slider_ValueChanged" x:Name="heightbar" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0.4,0">
+                <TextBlock Width="100" FontSize="30"><Run Text="  體 重"/></TextBlock>
+                <TextBox Width="300" x:Name="weight" Height="27" TextChanged="weight_TextChanged"/>
+                <Button Width="78" Margin="20,10,0,10" x:Name="weightclear" Content="Clear" Height="32" Click="weightclear_Click"/>
+            </StackPanel>
+
+            <Slider Minimum="0" Maximum="200" ValueChanged="Slider_ValueChanged" x:Name="weightbar" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+            <Button Width="100" FontSize="20" x:Name="count" Margin="0,20,0,20" Click="count_Click">
+                <Run Text="計 算"/>
+            </Button>
+
+            <TextBox Width="300" x:Name="total" Height="70" Margin="0,10,0,30"/>
+            
+        </StackPanel>
+    </Grid>
+</Window>
